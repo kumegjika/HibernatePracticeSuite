@@ -27,7 +27,7 @@ public class Book {
     private double price;
     @Column(name = "pages")
     private int pages;
-    @Column(name = "publication_date ")
+    @Column(name = "publication_date")
     private LocalDate publicationDate;
 
     @ManyToOne
