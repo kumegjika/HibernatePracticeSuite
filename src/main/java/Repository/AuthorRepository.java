@@ -26,7 +26,7 @@ public class AuthorRepository {
     public void delete (Author author){
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Transaction transaction = session.beginTransaction();
-            session.persist(author);
+            session.remove(author);
             transaction.commit();
         }catch (Exception e){
             e.printStackTrace();
@@ -44,9 +44,9 @@ public class AuthorRepository {
         }
     }
 
-    public Student getAuthorById(int id){
+    public Author getAuthorById(int id){
         try (Session session = HibernateUtil.getSessionFactory().openSession()){
-            return session.find(Student.class, id);
+            return session.find(Author.class, id);
         }
     }
 
